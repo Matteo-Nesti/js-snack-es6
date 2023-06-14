@@ -7,22 +7,31 @@ Stampare in console la bici con peso minore utilizzando il destructuring
 const bikes = [
   {
     name: "bici 1",
-    wieght: 25,
+    weight: 25,
   },
   {
     name: "bici 2",
-    wieght: 30,
+    weight: 30,
   },
   {
     name: "bici 3",
-    wieght: 20,
+    weight: 20,
   },
   {
     name: "bici 4",
-    wieght: 35,
+    weight: 10,
   },
   {
     name: "bici 5",
-    wieght: 10,
+    weight: 35,
   },
 ];
+
+const minorWeight = bikes.reduce((previous, current) => {
+  if (current.weight < previous.weight) {
+    return current;
+  } else {
+    return previous;
+  }
+});
+console.log(minorWeight);
