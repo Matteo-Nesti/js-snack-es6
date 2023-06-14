@@ -42,12 +42,19 @@ Generare numeri random al posto degli 0 nelle proprietà punti fatti e falli sub
 Infine, usando il destructuring, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+for (const team of teams) {
+  const randomPoints = Math.floor(Math.random() * 10) + 1;
+  const randomFoul = Math.floor(Math.random() * 10) + 1;
+  team.points = randomPoints;
+  team.foul = randomFoul;
+}
+/*
 for (let i = 0; i < teams.length; i++) {
   const randomPoints = Math.floor(Math.random() * 10) + 1;
   const randomFoul = Math.floor(Math.random() * 10) + 1;
   teams[i].points = randomPoints;
   teams[i].foul = randomFoul;
 }
-
+*/
 const newTeams = teams.map(({ name, foul }) => ({ name, foul }));
 console.log(teams, newTeams);
